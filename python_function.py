@@ -1,4 +1,6 @@
-# -*- coding:gbk -*-
+# -*- coding:utf-8 -*-
+from functools import reduce
+
 print("------function---------")
 
 def power(x):
@@ -27,3 +29,34 @@ def person(name,age,**ot):
 	print(ot)
 	
 person("lily","23",city = "shanghai", job ="android")
+#map
+
+def addCharA(s):
+	
+	return s+"A"
+
+personList = ["lily","sandy","bob","joker"]
+
+personAList = map(addCharA,personList)
+print(list(personAList))
+
+
+def calSum(i,j):
+	if(isinstance(i,int) and isinstance(j,int)):
+		return i+j
+	else:
+		raise TypeError("类型错误")
+numberList =[1,2,3,22,88,6,7,8,9,10,14,33,55,96]
+
+print(str(reduce(lambda x,y:x+y,numberList)))
+
+
+print(sorted(numberList,reverse =True))
+
+
+#返回函数
+
+def lazySum():
+	return str(reduce(calSum,numberList))
+f = lazySum
+f
