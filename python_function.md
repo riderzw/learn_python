@@ -14,15 +14,20 @@
 
 * 可变参数
 
-  传入的是list
+  传入的是list *args
 
 * 关键字参数
 
-  传入的是tuple
+  传入的是tuple **kw
 
 * 命名关键字参数
 
-  带有审查功能的关键字参数
+  限制关键字参数的名字 
+
+  ```python
+  def person(name, age, *, city, job):
+      print(name, age, city, job)
+  ```
 
   ​
 
